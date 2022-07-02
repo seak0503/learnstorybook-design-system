@@ -34,7 +34,7 @@ const linkStyles = css`
     margin-right: 0.4em;
   }
 
-  ${props =>
+  ${(props) =>
     props.containsIcon &&
     css`
       svg {
@@ -47,7 +47,7 @@ const linkStyles = css`
       }
     `};
 
-  ${props =>
+  ${(props) =>
     props.secondary &&
     css`
       color: ${color.mediumdark};
@@ -61,7 +61,7 @@ const linkStyles = css`
       }
     `};
 
-  ${props =>
+  ${(props) =>
     props.tertiary &&
     css`
       color: ${color.dark};
@@ -75,7 +75,7 @@ const linkStyles = css`
       }
     `};
 
-  ${props =>
+  ${(props) =>
     props.nochrome &&
     css`
       color: inherit;
@@ -87,7 +87,7 @@ const linkStyles = css`
       }
     `};
 
-  ${props =>
+  ${(props) =>
     props.inverse &&
     css`
       color: ${color.lightest};
@@ -101,7 +101,7 @@ const linkStyles = css`
       }
     `};
 
-  ${props =>
+  ${(props) =>
     props.isButton &&
     css`
       border: 0;
@@ -113,7 +113,7 @@ const linkStyles = css`
 `;
 
 const LinkInner = styled.span`
-  ${props =>
+  ${(props) =>
     props.withArrow &&
     css`
       > svg:last-of-type {
@@ -144,12 +144,19 @@ const LinkButton = styled.button`
   ${linkStyles};
 `;
 
-const applyStyle = LinkWrapper => {
+const applyStyle = (LinkWrapper) => {
   return (
     LinkWrapper &&
-    styled(({ containsIcon, inverse, nochrome, secondary, tertiary, ...linkWrapperRest }) => (
-      <LinkWrapper {...linkWrapperRest} />
-    ))`
+    styled(
+      ({
+        containsIcon,
+        inverse,
+        nochrome,
+        secondary,
+        tertiary,
+        ...linkWrapperRest
+      }) => <LinkWrapper {...linkWrapperRest} />
+    )`
       ${linkStyles};
     `
   );
@@ -189,7 +196,7 @@ Link.propTypes = {
   inverse: PropTypes.bool,
   nochrome: PropTypes.bool,
   secondary: PropTypes.bool,
-  tertiary: PropTypes.bool,
+  tertiary: PropTypes.bool
 };
 
 Link.defaultProps = {
@@ -201,5 +208,5 @@ Link.defaultProps = {
   inverse: false,
   nochrome: false,
   secondary: false,
-  tertiary: false,
+  tertiary: false
 };

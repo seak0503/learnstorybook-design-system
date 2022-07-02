@@ -9,11 +9,11 @@ export const sizes = {
   large: 40,
   medium: 28,
   small: 20,
-  tiny: 16,
+  tiny: 16
 };
 
 const Image = styled.div`
-  background: ${props => (!props.loading ? 'transparent' : color.light)};
+  background: ${(props) => (!props.loading ? 'transparent' : color.light)};
   border-radius: 50%;
   display: inline-block;
   vertical-align: top;
@@ -24,7 +24,7 @@ const Image = styled.div`
   width: ${sizes.medium}px;
   line-height: ${sizes.medium}px;
 
-  ${props =>
+  ${(props) =>
     props.size === 'tiny' &&
     css`
       height: ${sizes.tiny}px;
@@ -32,7 +32,7 @@ const Image = styled.div`
       line-height: ${sizes.tiny}px;
     `}
 
-  ${props =>
+  ${(props) =>
     props.size === 'small' &&
     css`
       height: ${sizes.small}px;
@@ -40,7 +40,7 @@ const Image = styled.div`
       line-height: ${sizes.small}px;
     `}
 
-  ${props =>
+  ${(props) =>
     props.size === 'large' &&
     css`
       height: ${sizes.large}px;
@@ -48,7 +48,7 @@ const Image = styled.div`
       line-height: ${sizes.large}px;
     `}
 
-  ${props =>
+  ${(props) =>
     !props.src &&
     css`
       background: ${!props.loading && '#37D5D3'};
@@ -127,12 +127,12 @@ Avatar.propTypes = {
   loading: PropTypes.bool,
   username: PropTypes.string,
   src: PropTypes.string,
-  size: PropTypes.oneOf(Object.keys(sizes)),
+  size: PropTypes.oneOf(Object.keys(sizes))
 };
 
 Avatar.defaultProps = {
   loading: false,
   username: 'loading',
   src: null,
-  size: 'medium',
+  size: 'medium'
 };
