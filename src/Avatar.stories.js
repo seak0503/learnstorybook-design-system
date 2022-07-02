@@ -4,7 +4,15 @@ import { Avatar } from './Avatar';
 
 export default {
   title: 'Design System/Avatar',
-  component: Avatar
+  component: Avatar,
+  argTypes: {
+    size: {
+      control: {
+        type: 'select'
+      },
+      options: ['tiny', 'small', 'medium', 'large']
+    }
+  }
 };
 
 export const Standard = (args) => <Avatar {...args} />;
@@ -59,3 +67,13 @@ export const Large = (args) => (
     />
   </div>
 );
+
+const Template = (args) => <Avatar {...args} />;
+
+export const Controls = Template.bind({});
+Controls.args = {
+  loading: false,
+  size: 'tiny',
+  username: 'Dominic Nguyen',
+  src: 'https://avatars2.githubusercontent.com/u/263385'
+};
