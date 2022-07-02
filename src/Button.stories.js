@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { userEvent, within } from '@storybook/testing-library';
 
 import { Button } from './Button';
 import { Icon } from './Icon';
@@ -323,3 +324,19 @@ export const AnchorWrapper = (args) => (
 );
 
 AnchorWrapper.storyName = 'anchor wrapper';
+
+// New story using the play function
+export const withInteractions = () => (
+  <Button
+    ButtonWrapper={StoryLinkWrapper}
+    appearance="primary"
+    href="http://storybook.js.org"
+  >
+    Button
+  </Button>
+);
+withInteractions.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  await userEvent.click(canvas.getByRole('link'));
+};
+withInteractions.storyName = 'button with interactions';
