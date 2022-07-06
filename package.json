@@ -82,7 +82,7 @@
   },
   "description": "Storybook design systems tutorial",
   "main": "dist/index.js",
-  "repository": "ssh://git@github.com/seak0503/learnstorybook-design-system.git",
+  "repository": "https://github.com/seak0503/learnstorybook-design-system.git",
   "author": "Shota Yamahira <shyamahira@bbtower.co.jp>",
   "license": "MIT"
 }
