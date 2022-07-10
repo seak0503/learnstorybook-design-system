@@ -4,7 +4,10 @@ import { AvatarList } from './AvatarList';
 
 export default {
   title: 'Design System/AvatarList',
-  component: AvatarList
+  component: AvatarList,
+  parameters: {
+    componentSubtitle: 'サブタイトルのテスト'
+  }
 };
 
 const Template = (args) => <AvatarList {...args} />;
