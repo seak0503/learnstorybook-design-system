@@ -1,3 +1,15 @@
+# v0.2.0 (Sun Jul 10 2022)
+
+#### 🚀 Enhancement
+
+- Create avatar list component [#1](https://github.com/seak0503/learnstorybook-design-system/pull/1) (shyamahira@bbtower.co.jp)
+
+#### Authors: 1
+
+- Shota Yamahira ([@seak0503](https://github.com/seak0503))
+
+---
+
 # v0.1.3 (Sun Jul 10 2022)
 
 #### ⚠️ Pushed to `main`
